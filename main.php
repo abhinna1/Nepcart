@@ -7,21 +7,17 @@
      <!-- Load CSS file -->
 
     <?php
-    $servername="localhost";
-    $username = "root";
-    $password = "";
-    $conn = new mysqli($servername, $username, $password);
+    include 'dbSetup.php';
+    $conn = new mysqli($hostname, $username, $password);
 
     // Check connection
     if ($conn->connect_error) {
-        echo '<script type="text/JavaScript"> 
-     console.log("Failed to connect to database!");
-     </script>';
+        echo '(<script>alert("Error in connection);</script>)';
     }
     // echo "Connected successfully";
     else{
         echo '<script type="text/JavaScript"> 
-        console.log("Connected to database");
+        alert("connected to database");
         </script>';
     }
 ;

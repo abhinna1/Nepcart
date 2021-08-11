@@ -10,6 +10,22 @@
     <!-- Connect JavaScript file -->
     <script src="register.js"></script>
 
+    <?php
+        include '../dbSetup.php';
+        $conn = new mysqli($hostname, $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            echo '(<script>alert("Error in connection);</script>)';
+        }
+        // echo "Connected successfully";
+        else{
+            echo '<script type="text/JavaScript"> 
+            alert("connected to database");
+            </script>';
+        }
+    ?>
+;
     <title> NepCart </title>
 </head>
 <body>
@@ -17,7 +33,7 @@
    
      <div class="menubar">
         <a href="Home.html" id=signup>
-            <img src="../Logo.png" alt="logo" class="logoimg"></a>   
+            <img src="../images/Logo.png" alt="logo" class="logoimg"></a>   
     <input type="text" id="searchbar">
     <a href="#" class="menubtn"><b>About Us</b></a>
     <a href="#" class="menubtn"><b>Categories</b></a>
