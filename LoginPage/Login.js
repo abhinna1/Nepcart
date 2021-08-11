@@ -3,7 +3,7 @@ function login(){
     location.href=homepage;
 }
 function signup(){
-    location.href = "signup page/registration.php";
+    location.href = "../signup page/registration.php";
 }
 
 function showPw() {

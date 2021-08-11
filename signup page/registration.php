@@ -11,19 +11,9 @@
     <script src="register.js"></script>
 
     <?php
-        include '../dbSetup.php';
-        $conn = new mysqli($hostname, $username, $password);
-
-        // Check connection
-        if ($conn->connect_error) {
-            echo '(<script>alert("Error in connection);</script>)';
-        }
-        // echo "Connected successfully";
-        else{
-            echo '<script type="text/JavaScript"> 
-            alert("connected to database");
-            </script>';
-        }
+        include '../Database Files/database.php';
+        $db = new Db();
+        $db->connectDb(); // connect database
     ?>
 ;
     <title> NepCart </title>
@@ -92,15 +82,18 @@
         <div class="gender">
             <label for="Gender" class="gndlbl"><b>Gender</b></label>
             <br>
-            &nbsp;&nbsp;&nbsp;
+            
             <input type="radio" name="Gender" id="male">
-            &nbsp;
+            
             <span id="male"><b>Male</b></span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+            
             <input type="radio" name="Gender" id="female">
-            &nbsp;
+            
             <span id="female"><b>Female</b></span>
         </div>
-        <button class="signupbtn" onclick="signup()">Sign Up</button>
+        <div>
+            <button class="signupbtn" onclick="signup()">Create account</button>
+            <button class="signupbtn" onclick="location.href='../LoginPage/Login.php'">Log into existing account</button>
+        </div>
 </body>
 </html>

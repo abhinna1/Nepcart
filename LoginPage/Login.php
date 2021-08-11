@@ -7,26 +7,15 @@
      <!-- Load CSS file -->
 
     <?php
-    include 'dbSetup.php';
-    $conn = new mysqli($hostname, $username, $password);
-
-    // Check connection
-    if ($conn->connect_error) {
-        echo '(<script>alert("Error in connection);</script>)';
-    }
-    // echo "Connected successfully";
-    else{
-        echo '<script type="text/JavaScript"> 
-        alert("connected to database");
-        </script>';
-    }
-;
-  ?>
+        include '../Database Files/database.php';
+        $db = new Db();
+        $db->connectDb(); // connect database
+    ?>
 
      <!-- Connect CSS StyleSheet -->
-     <link rel="stylesheet" href="css files\main.css">
+     <link rel="stylesheet" href="login.css">
      <!-- Connect Javascript File -->
-     <script src="main.js"></script>
+     <script src="Login.js"></script>
     
     <title>NepCart</title>
 </head>
@@ -37,11 +26,11 @@
    
     <div class="menubar">
             <a href="main.php" id=logoh>
-                <img src="Logo.png" alt="logo" href= "Homepage.php"class="logoimg"></a>   
+                <img src="../images/Logo.png" alt="logo" href= "Homepage.php"class="logoimg"></a>   
         <input type="text" id="searchbar">
-        <a href="about.html" class="menubtn"><b>About Us</b></a>
-        <a href="categories.html" class="menubtn"><b>Categories</b></a>
-        <a href="Homepage.php" class="menubtn"><b>Home</b></a>
+        <a href="#" class="menubtn"><b>About Us</b></a>
+        <a href="#" class="menubtn"><b>Categories</b></a>
+        <a href="#" class="menubtn"><b>Home</b></a>
     </div>
 
     <!-- Login Box -->
