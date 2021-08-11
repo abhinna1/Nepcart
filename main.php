@@ -68,7 +68,7 @@
             
         </div>
         <button class="loginbtn" onclick=login()>Login</button>
-        <button class="loginbtn" onclick=login()>Sign Up</button>
+        <button class="loginbtn" onclick=signup()>Sign Up</button>
 
 </body>
 

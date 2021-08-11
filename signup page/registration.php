@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <!-- Connect CSS StyleSheet -->
-    <link rel="stylesheet" href="/Users/Dell/Documents/mycode/register.css"
+    <link rel="stylesheet" href="register.css">
     <!-- Connect JavaScript file -->
-    <script src="/Users/Dell/Documents/mycode/register.js"></script>
+    <script src="register.js"></script>
 
     <title> NepCart </title>
 </head>
@@ -16,12 +16,12 @@
      <!-- Menu Bar -->
    
      <div class="menubar">
-        <a href="../mycode/Home.html" id=signup>
-            <img src="../mycode/Logo.png" alt="logo" class="logoimg"></a>   
+        <a href="Home.html" id=signup>
+            <img src="../Logo.png" alt="logo" class="logoimg"></a>   
     <input type="text" id="searchbar">
-    <a href="../mycode/about.html" class="menubtn"><b>About Us</b></a>
-    <a href="../mycode/categories.html" class="menubtn"><b>Categories</b></a>
-    <a href="../mycode/Home.html" class="menubtn"><b>Home</b></a>
+    <a href="#" class="menubtn"><b>About Us</b></a>
+    <a href="#" class="menubtn"><b>Categories</b></a>
+    <a href="#" class="menubtn"><b>Home</b></a>
     </div>
     <!-- Sign Up Box -->
     <div class="SignUp">
@@ -85,6 +85,6 @@
             &nbsp;
             <span id="female"><b>Female</b></span>
         </div>
-        <button class="signupbtn" onclick=signup()>Sign Up</button>
+        <button class="signupbtn" onclick="signup()">Sign Up</button>
 </body>
 </html>

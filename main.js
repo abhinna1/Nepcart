@@ -2,6 +2,10 @@ function login(){
     var homepage = "Homepage.php";
     location.href=homepage;
 }
+function signup(){
+    location.href = "signup page/registration.php";
+}
+
 function showPw() {
     var x = document.getElementById("pswent");
     if (x.type === "password") {
