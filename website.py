@@ -1,2 +1,2 @@
 import webbrowser
-webbrowser.open("localhost/nepcart/main.php")
+webbrowser.open("localhost/nepcart/LoginPage/Login.php")

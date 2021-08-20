@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
     <!-- Connect CSS StyleSheet -->
     <link rel="stylesheet" href="register.css">
     <!-- Connect JavaScript file -->
@@ -12,88 +8,107 @@
 
     <?php
         include '../Database Files/database.php';
-        $db = new Db();
-        $db->connectDb(); // connect database
+        
+        include 'Form.php';
+        
     ?>
-;
+
     <title> NepCart </title>
 </head>
+
 <body>
      <!-- Menu Bar -->
-   
      <div class="menubar">
-        <a href="Home.html" id=signup>
+         <!-- Logo -->
+        <a href="../LoginPage/Login.php" id=signup>
             <img src="../images/Logo.png" alt="logo" class="logoimg"></a>   
+    <!-- Search Bar -->
     <input type="text" id="searchbar">
+    <!-- Menu buttons -->
     <a href="#" class="menubtn"><b>About Us</b></a>
     <a href="#" class="menubtn"><b>Categories</b></a>
     <a href="#" class="menubtn"><b>Home</b></a>
     </div>
-    <!-- Sign Up Box -->
-    <div class="SignUp">
-        <!-- Name Label and Entry -->
-        <div class=" UserName">
-            <label for="UserName" class="namelbl"><b>UserName</b></label>
-            <br>
-            <input type="text" placeholder="Enter your fullname" name="UserName" required class="nament">
-        </div>
 
-        <!-- Password Label and Entry -->
-        <div class ="psw">
-            <label for="psw" class="pswlbl"><b>Password</b></label>
-            <br>
-            <input type="text" placeholder="Enter password" id="pswent">
-        </div>
-         
-        <div class="confirm">
-            <label for="confirm" class="relbl"><b>Confirm Password</b></label>
-            <br>
-        <input type="text" placeholder="Re-enter password" id="conpsw">
-        </div>
-        
-        <!-- Email Label and Entry-->
-        <div class="eml">
-            <label for="Email" class="emllbl"><b>E-mail</b></label>
-            <br>
-            <input type = "email" placeholder="Enter your email" name="E-mail" required class="emlent">
-        </div>
+    <!-- Registration Form -->
+    <form action="" method = "POST">
+        <?php
+        if($_SERVER["REQUEST_METHOD"]!="POST"){?> <!-- If Form is submitted -->
 
-        <!-- Address Label and Entry-->
-        <div class="address">
-            <label for="Address" class="addlbl"><b>Address</b></label>
-            <br>
-            <input type = "Address" placeholder="Enter your address" name="address" required class="addent">
-        </div>
+            <!-- Sign Up Box -->
+            <div class="SignUp">
 
-        <!-- Phone Number Label and Entry-->
-        <div class="phone">
-            <label for="Phone No." class="phnlbl"><b>Phone No.</b></label>
-            <br>
-            <select>
-                <option>977</option>
-                <option>880</option>
-                <option>91</option>
-                <option>66</option>
-            </select>
-            <input type="Phone" placeholder="9841******" name="Phone No." required class="phnent">
-        </div>
+                <!-- user name input -->
+                <div class=" UserName">
+                    <b>User Name</b>
+                    <br>
+                    <input type="text" name="username" required class="nament">
+                </div>
+                
+                <!-- email input -->
+                <div class="eml">
+                    <b>E-mail</b>
+                    <br>
+                    <input type = "email" name="email" required class="emlent">
+                </div>
 
-        <!-- Gender Label and Entry-->
-        <div class="gender">
-            <label for="Gender" class="gndlbl"><b>Gender</b></label>
-            <br>
-            
-            <input type="radio" name="Gender" id="male">
-            
-            <span id="male"><b>Male</b></span>
-            
-            <input type="radio" name="Gender" id="female">
-            
-            <span id="female"><b>Female</b></span>
-        </div>
-        <div>
-            <button class="signupbtn" onclick="signup()">Create account</button>
-            <button class="signupbtn" onclick="location.href='../LoginPage/Login.php'">Log into existing account</button>
-        </div>
+                <!-- Password input -->
+                <div class ="psw">
+                    <b>Pasword</b>
+                    <br>
+                    <input type="password" name="password" id="pswent">
+
+                    <!-- Confirm password input -->
+                    <div class="confirm">
+                    <b>Confirm Pasword</b>
+                    <br>
+                    <input type="password" name="cfm_password"id="conpsw">
+                </div>
+                </div>
+
+                <!-- Phone number input -->
+                <div class="phone">
+                    <b>Phone Number</b>
+                    <br>
+                    <select name="phone_code">
+                        <option>Nepal (+977)</option>
+                        <option>India (+91)</option>
+                    </select>
+                    <input type="Phone" name="phone" class="phnent">
+                </div>
+
+                <!-- Address input-->
+                <div class="address">
+                    <b>Address</b>    
+                    <br>
+                    <input type = "Address" name="address" required class="addent">
+                </div>
+
+                <!-- Gender input -->
+                <div class="gender">
+                    <b>Gender</b>
+                    <br>
+                    <input type="radio" name="gender" value="Male" id="Male">
+                        <span><b>Male</b></span>
+                    <input type="radio" name="gender" value="Female" id="Female">
+                        <span><b>Female</b></span>
+                </div>
+
+                <!-- Buttons -->
+                <div>
+                    <input type="submit">
+                    </form>
+                    <button class="signupbtn" onclick="location.href='../LoginPage/Login.php'">Log into an existing account</button>
+
+                </div>
+            </div>
+        <?php
+        }
+        else{
+            $db = new Db();
+            $form = new Form();
+            $form->formValidation();
+        }
+        ?>
 </body>
 </html>

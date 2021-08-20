@@ -284,13 +284,13 @@ body{
     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
 }
 
-.gender{
+#female{
     margin-top: 6px;
-    padding-right: 10px;
+    padding-left: 500px;
     margin-left:20px;
 }
 .gndlbl{
-    padding-right:10px;
+    padding-left:20px;
 }
 
 .signupbtn{

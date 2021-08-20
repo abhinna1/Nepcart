@@ -16,7 +16,7 @@
      <link rel="stylesheet" href="login.css">
      <!-- Connect Javascript File -->
      <script src="Login.js"></script>
-    
+
     <title>NepCart</title>
 </head>
 
@@ -49,11 +49,11 @@
             <input type="password" id="pswent">
             <br>
 
-            <input type="checkbox" onclick="showPw()"><b style="font-size:10px;">Show Password</b>
+            <input type="checkbox" onclick="login.showPw()"><b style="font-size:10px;">Show Password</b>
             
         </div>
-        <button class="loginbtn" onclick=login()>Login</button>
-        <button class="loginbtn" onclick=signup()>Sign Up</button>
+        <button class="loginbtn" onclick=login.logging().call(login)>Login</button>
+        <button class="loginbtn" onclick=login.loginsignup()>Sign Up</button>
 
 </body>
 

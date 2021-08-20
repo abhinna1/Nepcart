@@ -1,22 +1,26 @@
-function login(){
-    var homepage = "Homepage.php";
-    location.href=homepage;
-}
-function signup(){
-    location.href = "../signup page/registration.php";
-}
+class Login{
+    constructor(loginDir, signupDir, pwId){
+        this.loginDir = loginDir;
+        this.signupDir = signupDir;
+        this.pwId = pwId
 
-function showPw() {
-    var x = document.getElementById("pswent");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
+        this.logging =function(){
+            var dir = loginDir;
+            location.href=dir;
+        }
+
+        this.signup = function(){
+            location.href = "signupDir";
+        }
+
+        this . showPw = function() {
+            var x = document.getElementById("pswent");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
     }
-}
-function connected() {
-    console.log("Connection Established Successfully!");
-}
-function connectionFailed() {
-    console.log("Failed To Establish Connection");
-}
+login = new Login('../signup page/registratioin.php', '../signup page/registratioin.php', 'pswent');
+};

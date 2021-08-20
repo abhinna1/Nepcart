@@ -5,7 +5,7 @@ class Db{
     
     function connectDb(){
         include 'dbSetup.php';
-        $conn = new mysqli($hostname, $username, $password);
+        $conn = new mysqli($hostname, $username, $password, $dbName);
         if ($conn->connect_error) {
             echo '(<script>alert("Error in connection");</script>)';
         }
