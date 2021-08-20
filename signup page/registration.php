@@ -1,114 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Connect CSS StyleSheet -->
-    <link rel="stylesheet" href="register.css">
-    <!-- Connect JavaScript file -->
-    <script src="register.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepcart</title>
 
+    <!-- CSS connection -->
+    
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- import form class -->
     <?php
-        include '../Database Files/database.php';
-        
-        include 'Form.php';
-        
+        require_once('FormDesign.php');
+        require_once('Submit.php');
+        require_once('FormInput.php');
+        $form = new FormDesign();
+        $submit = new Submit();
+        $input = new Input();
     ?>
-
-    <title> NepCart </title>
 </head>
-
-<body>
-     <!-- Menu Bar -->
-     <div class="menubar">
-         <!-- Logo -->
-        <a href="../LoginPage/Login.php" id=signup>
-            <img src="../images/Logo.png" alt="logo" class="logoimg"></a>   
-    <!-- Search Bar -->
-    <input type="text" id="searchbar">
-    <!-- Menu buttons -->
-    <a href="#" class="menubtn"><b>About Us</b></a>
-    <a href="#" class="menubtn"><b>Categories</b></a>
-    <a href="#" class="menubtn"><b>Home</b></a>
-    </div>
-
-    <!-- Registration Form -->
-    <form action="" method = "POST">
-        <?php
-        if($_SERVER["REQUEST_METHOD"]!="POST"){?> <!-- If Form is submitted -->
-
-            <!-- Sign Up Box -->
-            <div class="SignUp">
-
-                <!-- user name input -->
-                <div class=" UserName">
-                    <b>User Name</b>
-                    <br>
-                    <input type="text" name="username" required class="nament">
-                </div>
+<body style="background-image:url(../images/shop1.png); background-size: 150%;">
+    <div class="container" style="background-color:transparent;">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-sm bg-light" style="margin-top:10px;">
+            <a href="#">
+                <img src="../images/Logo.png" alt="" style="height:40px; top:50%; bottom:50%; margin-right:20px;">
+            </a>
+            <!-- Links -->
+            <ul class="nav navbar-nav navbar-right">
                 
-                <!-- email input -->
-                <div class="eml">
-                    <b>E-mail</b>
-                    <br>
-                    <input type = "email" name="email" required class="emlent">
-                </div>
+                <li class="nav-item">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home" style='padding-right:5px;'></span>Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                    <span class="glyphicon glyphicon-th-list" style='padding-right:5px;'></span>Categories
+                    </a>
+                </li>
+                <li style="height: 10%; width: 500px; margin-left:3rem; margin-top:auto; margin-bottom:auto;">
+                    <input type="search" class="form-control glyphicon glyphicon-search" placeholder="&#xe003" style="outline:none;"/>
+                </li>
+            </ul>
 
-                <!-- Password input -->
-                <div class ="psw">
-                    <b>Pasword</b>
-                    <br>
-                    <input type="password" name="password" id="pswent">
+            <ul class="nav navbar-nav navbar-right" style='margin-left:5rem' >
+                <li >
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user" style='padding-right:5px;'></span>Sign Up
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-log-in" style='padding-right:5px;'></span>Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-                    <!-- Confirm password input -->
-                    <div class="confirm">
-                    <b>Confirm Pasword</b>
-                    <br>
-                    <input type="password" name="cfm_password"id="conpsw">
-                </div>
-                </div>
-
-                <!-- Phone number input -->
-                <div class="phone">
-                    <b>Phone Number</b>
-                    <br>
-                    <select name="phone_code">
-                        <option>Nepal (+977)</option>
-                        <option>India (+91)</option>
-                    </select>
-                    <input type="Phone" name="phone" class="phnent">
-                </div>
-
-                <!-- Address input-->
-                <div class="address">
-                    <b>Address</b>    
-                    <br>
-                    <input type = "Address" name="address" required class="addent">
-                </div>
-
-                <!-- Gender input -->
-                <div class="gender">
-                    <b>Gender</b>
-                    <br>
-                    <input type="radio" name="gender" value="Male" id="Male">
-                        <span><b>Male</b></span>
-                    <input type="radio" name="gender" value="Female" id="Female">
-                        <span><b>Female</b></span>
-                </div>
-
-                <!-- Buttons -->
-                <div>
-                    <input type="submit">
-                    </form>
-                    <button class="signupbtn" onclick="location.href='../LoginPage/Login.php'">Log into an existing account</button>
-
-                </div>
-            </div>
         <?php
+        if($_SERVER['REQUEST_METHOD']!="POST"){
+            
+            $input->inputPage();
+        
         }
         else{
-            $db = new Db();
-            $form = new Form();
-            $form->formValidation();
+            $submit->submitCard();
         }
-        ?>
+    ?>
 </body>
 </html>
+
+
+
+
