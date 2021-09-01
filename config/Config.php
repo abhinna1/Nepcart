@@ -12,15 +12,16 @@
             $this->dbName = $dbName;
         }
         public function connectDb(){
-            $conn = new sqli($hostname, $username);
-            if ($conn->connect_error) {
-                echo '(<script>alert("Error in connection");</script>)';
+            $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->dbName);
+            if ($this->conn->connect_error) {
+                echo '(<script>alert("Error in connection");</script>)';           
             }
             else{
                 echo '<script type="text/JavaScript"> 
                 alert("connected to database");
                 </script>';
             }
+            return $this->conn;
         }
     }
 

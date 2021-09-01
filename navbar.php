@@ -19,6 +19,7 @@
                         <li class="nav-item">
                             <a href="#">
                             <span class="glyphicon glyphicon-th-list" style='padding-right:5px;'></span>Categories
+                            
                             </a>
                         </li>
                         <li style="height: 10%; width: 500px; margin-left:3rem; margin-top:auto; margin-bottom:auto;">
@@ -28,12 +29,12 @@
 
                     <ul class="nav navbar-nav navbar-right" style='margin-left:5rem' >
                         <li >
-                            <a href="#">
+                            <a href="../signup page/registration.php">
                                 <span class="glyphicon glyphicon-user" style='padding-right:5px;'></span>Sign Up
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../Login/Login.php">
                                 <span class="glyphicon glyphicon-log-in" style='padding-right:5px;'></span>Login
                             </a>
                         </li>

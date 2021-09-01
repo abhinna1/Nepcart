@@ -1,5 +1,4 @@
 <?php
-    
     class Input extends FormDesign{
         public function formInput(){
             return <<<HTML
@@ -12,10 +11,13 @@
 
                 <h4>Phone Number</h4>
                 
-                    <select class="form-select" name="phone_code" aria-label="Default select example" name="phone_code" style="display:inline;">
+                    <select  name="phone_code" aria-label="btn btn-danger dropdown-toggle" data-toggle="dropdown" name="phone_code" style = "padding-right:1px; padding-left:1px; padding-top:1px; padding-left:1px; text-align:center; display:inline;">
                         <option selected> Nepal (+977)</option>
                         <option India> (+91)</option>
                     </select>
+
+                   
+
                     <input type="Phone" name="phone" class="form-control" style="width:60%; height:10%; display:inline;">
                 
                 <h4>Address</h4> <input type="address" name="address"class="form-control">
@@ -30,10 +32,12 @@
                         <label class="form-check-label" for="exampleRadios1" style='while-space:normal; margin-left: 35px;text-indent: 0px;'>
                             Female
                         </label>
-                    </div>
-                    <input class = "btn btn-success"type="submit"style="margin-top:20px; height:">
+                    </div class="container">
+                    <input class = "btn btn-success"type="submit" style="margin-top:20px; height:">
+                    <a href="../Login/Login.php" class = "btn btn-success" style="margin-top:20px; margin-left: 10px;" >Login with existing account</a>
             </form>
-            
+                
+                    </div>
             HTML;
         
     }
