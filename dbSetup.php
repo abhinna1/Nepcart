@@ -1,7 +1,7 @@
 <?php
-$hostname = 'localhost'; //SQL host name
-$username = 'root'; // SQL username
-$password = ''; // SQL password
+$hostname = 'localhost'; //SQL host name details
+$username = 'root'; // SQL username details
+$password = ''; // SQL password details
 
 
 ?>
