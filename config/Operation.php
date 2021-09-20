@@ -22,7 +22,8 @@ class Operation{
     public function insertDb($conn){
         require_once('../signup page/Submit.php');
         $query = "insert into tbl_user(fName, lName, email, pasword, phone_code, phone, address, gender) values('$this->fName', '$this->lName', '$this->email', '$this->password', '$this->phone_code','$this->phone', '$this->address', '$this->gender');";
-        $conn -> query($query);
+        $stmt = $conn -> prepare($query);
+        $stmt->execute();
     }
 
 }

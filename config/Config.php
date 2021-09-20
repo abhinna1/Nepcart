@@ -5,6 +5,7 @@
         private $password;
         private $dbName;
         private $conn;
+        private $object;
         public function __construct($hostname, $username, $password, $dbName){
             $this->hostname = $hostname;
             $this->username = $username;
@@ -12,16 +13,29 @@
             $this->dbName = $dbName;
         }
         public function connectDb(){
-            $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->dbName);
-            if ($this->conn->connect_error) {
-                echo '(<script>alert("Error in connection");</script>)';           
+            
+            try{
+                $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->dbName);
+                
             }
-            else{
-                echo '<script type="text/JavaScript"> 
-                alert("connected to database");
-                </script>';
+            catch(Exception $e){
+                echo $e;
+                echo '(<script>alert("Error in connection");</script>)';
             }
+
+            // try{
+            // $this->conn = new PDO(
+            //     "mysql:host=$this->hostname; dbname=$this->dbName",
+            //     $this->username, $this->password);
+            // }
+            // catch(Exception $e){
+            //     echo "error in connection";
+            // }
             return $this->conn;
+        }
+        public static function getObject(){
+            $this->object = new Config("localhost", "Abhinna", '$abhi123', "nepcart_db");
+            return $this->object;
         }
     }
 

@@ -8,6 +8,8 @@
                     <h4>Password</h4> <input type="password" name="password"class="form-control">
                     <button class = "btn btn-success" style="margin-top:10px;">Login</button>
                     <a href="../signup page/registration.php" class = "btn btn-success" style="margin-top:10px; margin-left:10px;"> Create new account</a>
+                    <br>
+                    <a href="#" >Forgot password</a>
                 </form>
             HTML;
         

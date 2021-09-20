@@ -2,7 +2,8 @@
 
 <?php
 // Import Files
-require('../navbar.php');
+    require('../navbar.php');
+    $navbar = new Navbar();
 ?>
 
 <!DOCTYPE html>
@@ -20,17 +21,22 @@ require('../navbar.php');
 
 
 <body style="background-image:url(../images/shop1.png); background-size: 150%;">
-    <?php
-    $navbar = new Navbar();
-    ?>
+    
     <div class="container" style="background-color:transparent;">
         <?php
+        session_abort();
         echo $navbar->displayNavBar();
         
         if($_SERVER['REQUEST_METHOD'] != "POST"){
             require_once('LoginInput.php');
             $login = new LoginInput();
             $login->inputPage();
+            
+        }
+        else{
+            include_once('LoginPhp.php');
+            $loginPhp = new LoginPhp();
+            $loginPhp->login();
         }
     ?>
 

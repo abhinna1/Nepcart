@@ -34,8 +34,8 @@
             
         }
         else{
+            echo $submit->submitCard();
             
-            $submit->submitCard();
         }
     ?>
 </body>
