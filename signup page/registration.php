@@ -13,6 +13,8 @@
     
     <!-- import form class -->
     <?php
+        require_once('../navbar.php');
+        $navbar = new Navbar();        
         require_once('FormDesign.php');
         require_once('Submit.php');
         require_once('FormInput.php');
@@ -20,7 +22,7 @@
         $form = new FormDesign();
         $submit = new Submit();
         $input = new Input();
-        $navbar = new Navbar();
+        
         
     ?>
 </head>

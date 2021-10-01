@@ -15,14 +15,17 @@ class LoginPhp{
         $conn = $config->connectDb();
         $stmt = "SELECT * FROM tbl_user where email='$email' and pasword = '$password'";
         $user = $conn->query($stmt);
-        // while ($row = $user->fetch_assoc()) {
-        //     // echo json_encode($row);
             if(mysqli_num_rows($user)>0){
                 session_start();
                 while ($row = $user->fetch_assoc()) {
                     $_SESSION['id'] = $row['uID'];
-                    $_SESSION['name'] = $row['fName'];
-                    $_SESSION['id'] = $row['uID'];
+                    $_SESSION['fname'] = $row['fName'];
+                    $_SESSION['lname'] = $row['lName'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['password'] = $row['password'];
+                    $_SESSION['address'] = $row['address'];
+                    $_SESSION['phone'] = $row['phone'];
+
                     echo "<script>alert($this->getSession())</script>";
 
                 }

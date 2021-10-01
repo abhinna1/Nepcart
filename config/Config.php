@@ -5,7 +5,7 @@
         private $password;
         private $dbName;
         private $conn;
-        private $object;
+        private static $object;
         public function __construct($hostname, $username, $password, $dbName){
             $this->hostname = $hostname;
             $this->username = $username;
@@ -34,8 +34,8 @@
             return $this->conn;
         }
         public static function getObject(){
-            $this->object = new Config("localhost", "Abhinna", '$abhi123', "nepcart_db");
-            return $this->object;
+            $object = new Config("localhost", "Abhinna", '$abhi123', "nepcart_db");
+            return $object;
         }
     }
 

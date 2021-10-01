@@ -24,7 +24,6 @@
     
     <div class="container" style="background-color:transparent;">
         <?php
-        session_abort();
         echo $navbar->displayNavBar();
         
         if($_SERVER['REQUEST_METHOD'] != "POST"){

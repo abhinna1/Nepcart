@@ -15,7 +15,7 @@
             $loginPhp = new LoginPhp;
             
             // session_start();
-            $name = $_SESSION['name'];
+            $name = $_SESSION['fname'];
             return <<<HTML
                 <!-- Navigation Bar -->
                 <nav class="navbar navbar-expand-sm bg-light" style="margin-top:10px;">
@@ -42,13 +42,13 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" style='margin-left:5rem' >
                         <li >
-                            <a href=#>                                                         
+                            <a href="../UserEdit/Edit.php">                                                         
                                 <span class="glyphicon glyphicon-user" style='padding-right:5px;'></span>$name 
                             </a>
                         </li>
                         <li>
                             <a href="../Login/logout.php">
-                                <span class="glyphicon glyphicon-log-in" style='padding-right:5px;'></span>Log Out
+                                <span class="glyphicon glyphicon-log-out" style='padding-right:5px;'></span>Log Out
                             </a>
                         </li>
                     </ul>
