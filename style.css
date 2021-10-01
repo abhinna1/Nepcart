@@ -1,0 +1,6 @@
+*{margin:center; padding: 0;box-sizing:border-box ;
+font-family: 'Josefin Sans', sans-serif;}
+.carousel-inner img{
+    width: 720px;
+    height: 720px;
+}
