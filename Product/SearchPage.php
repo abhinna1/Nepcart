@@ -16,10 +16,12 @@
         ?>
     </div>
 
+    <div class=""
     <?php
         include_once('ProductSearch.php');
         $pSearch = new ProductSearch();
         $res = $pSearch->search();
+        
         while($row=mysqli_fetch_array($res)){
             echo <<<HTML
                 <main>
