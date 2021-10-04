@@ -32,13 +32,13 @@ class ViewCart{
         $config = Config::getObject();
         $this->con=$config->connectDb();
         $uid = $_SESSION['id'];
-        $query = "select p.product_name, p.product_price,p.product_image, p.product_id from tbl_user as u, tbl_product as p, tbl_cart as c where c.uID = $uid and c.uid = u.uid and c.product_id = p.product_id;";
+        $query = "SELECT p.product_name, p.product_price,p.product_image, p.product_id FROM tbl_product as p where p.uID=1;";
         $res = mysqli_query($this->con, $query);
         
         echo <<<HTML
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">My Cart</h1>
+                <h1 class="jumbotron-heading">My Products</h1>
             </div>
         </section>
 
@@ -69,7 +69,7 @@ class ViewCart{
                                     <td>In stock</td>
                                     <td><input class="form-control" type="text" value="1" /></td>
                                     <td class="text-right">$row[1]</td>
-                                    <form action='CartDelete.php?pid=$pid' method="POST">
+                                    <form action='ProductDelete.php?pid=$pid' method="POST">
                                         <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button> </td>
                                     </form>
                                 </tr>
@@ -92,7 +92,9 @@ class ViewCart{
                         </form>
                         </div>
                         <div class="col-sm-12 col-md-6 text-right">
-                            <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                            <form action="ProductForm.php" method="GET">
+                                <button class="btn btn-lg btn-block btn-success text-uppercase">Add New Product</button>
+                            </form>
                         </div>
                     </div>
                 </div>

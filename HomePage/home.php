@@ -78,7 +78,7 @@
                 echo <<<HTML
                     <form method="POST">
                     <main>
-                    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative; width: 20%; display: inline-block;">
+                    <div class="col-sm-4" style="position: relative; width: 20%; display: inline-block;">
                         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" style ="display: inline-block;">
                             <div class="col" style="display: inline-block;">
                                 <div class="card h-100 shadow-sm"> <img src= ../Product/$row[2] class="card-img-top" alt="...">

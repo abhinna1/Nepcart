@@ -19,7 +19,7 @@
         public function displayNavBar(){
             include_once 'Login/LoginPhp.php';
             $loginPhp = new LoginPhp;
-            
+            $id = $_SESSION['id'];
             // session_start();
             $name = $_SESSION['fname'];
             return <<<HTML
@@ -71,7 +71,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="../Product/ProductForm.php">My Products</a></li>
+                                <li><a class="dropdown-item" href="../Product/SelfProduct.php">My Products</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

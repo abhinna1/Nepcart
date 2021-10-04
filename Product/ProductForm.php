@@ -1,29 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-    <link rel="stylesheet" href="Page-2.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 3.26.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Document</title> -->
+    <!-- <link rel="stylesheet" href="../bootstrap.css"> -->
+    <!-- <link rel="stylesheet" href="nicepage.css" media="screen"> -->
+    <!-- <link rel="stylesheet" href="Page-2.css" media="screen"> -->
+    <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script> -->
+    <!-- <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
+    <!-- <link id="u-theme-google-font" rel="stylesheet"href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"> -->
 
-
+<!-- 
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
             "@type": "Organization",
             "name": ""
-        }
-    </script>
+        } -->
+    <!-- </script> -->
     <style type='text/css'>
     br{
         margin : 5px;
@@ -37,79 +35,7 @@
         
         margin-top: px;
     }
-    .regform{
-        width: 800px;
-        background-color: rgb(0,0,0,0.9);
-        margin: auto;
-        color: #ffffff;
-        padding: 10px 10px 30px 10px;
-        text-align: center;
-        border-radius: 15px 15px 0px 0px;
-
-    }
-    .main{
-        width: 800px;
-        background-color: rgb(0,0,0,0.9);
-        margin: auto;
-        color: #ffffff;
-        padding: 10px 0px 10px 0px;
-        text-align: center;
-        border-radius: 0px 0px 15px 15px;
-    }
-    form{
-        padding: 10px;
-    }
-    .ProductName{
-        position: relative;
-        /* margin : auto; */
-        top: -37px;
-        line-height: 30px;
-        border-radius: 5px;
-        padding:0 20PX ;
-
-
-       
-
-    }
-
-    .Pprice{
-        position: relative ;
-        top: -37px;
-        left: 26px;
-        line-height: 30px;
-        border-radius: 5px;
-        padding:10px 20PX ;
-       
-    }
-    .Pfile{
-        position: relative ;
-        top: -37px;
-        right: -350px;
-       
-        
-        padding:10px 20PX ;
-
-
-    }
-    .pd{
-        position: relative ;
-        top: -37px;
-        left: -20px;
-        line-height: 30px;
-        border-radius: 5px;
-        padding:10px 20PX ;
-       
-    }
-    .pc{
-        position: relative ;
-        top: -10px;
-        left:30px;
-        line-height: 30px;
-        border-radius: 5px;
-        padding:10px 20PX ;
-        color: Black;
-        
-    }
+    
     input{
         color:black;
     }
@@ -120,7 +46,6 @@
     
 
 </head>
-
 <body style="background-image:url(../images/shop1.png); background-size: 150%;">
     <div class="container" style="background-color:transparent;">
         <?php include_once ('../navbar.php');
@@ -129,40 +54,38 @@
         ?>
     </div>
     <?php
-        if(isset($_SESSION['id'])){
             if($_SERVER['REQUEST_METHOD']!="POST"){
+                // session_start();
                 echo <<<HTML
-                                    <div class= "regform"><h1> Product details </h1></div>
+                                    <div class= "regform" style="width: 800px;background-color: rgb(0,0,0,0.9);margin: auto;color: #ffffff;padding: 10px 10px 30px 10px;text-align: center;border-radius: 15px 15px 0px 0px;"><h1> Product details </h1></div>
                                     
-                                    <div class="main"> <form method="POST" enctype = "multipart/form-data">
+                                    <div class="main" style="width: 800px;background-color: rgb(0,0,0,0.9);margin: auto;color: #ffffff;padding: 10px 0px 10px 0px;text-align: center;border-radius: 0px 0px 15px 15px;">
+                                    <form method="POST" style = "padding: 10px;"enctype = "multipart/form-data">
                                             
                                             
-                                            <div class= "ProductName">
+                                            <div class= "ProductName" style="position: relative;/* margin : auto; */top: -37px;line-height: 30px;border-radius: 5px;padding:0 20PX ;">
                                             
-                                            Product name: <input type="text"  name = "name" >
+                                            Product name: <input type="text"  name = "name" style="color:black;">
                                             </div>
-                                            <div class = "Pprice">
+                                            <div class = "Pprice" style = "position: relative ;top: -37px;left: 26px;line-height: 30px;border-radius: 5px;padding:10px 20PX ;">
                                             
-                                            Price: <input type="text" name = "price">
-                                            <h4> Image</h4>
-                                            </div>
+                                            Price: <input type="text" name = "price" style="color:black;">
                                             
-                                            <div class= "Pfile">
-                                            
-                                            <input type="file" name = "upload">
                                             </div>
-                                            <div class = "pd">
-                                            Product Description: <input type="text" style = "height:100px;" name = "desc">
-                                            </div>
-                                            <h4> category
 
-                                            </h4>
-                                            <div class= pc>
-                                           <select name="category";>
-                                                <option value="clothing " >Clothing</option>
-                                                <option value="electronics">Electronics</option>
+                                            <div class= "Pfile" style="position: relative ;top: -37px;right: -100px;">
+                                            Image: <input type="file" name = "upload" style="color:black; display:inline-block;">
+
+                                            </div>
+                                            <div class = "pd" style="position: relative ;top: -37px;left: -20px;line-height: 30px;border-radius: 5px;padding:10px 20PX ;">
+                                            Product Description: <input type="text" style = "height:100px; color:black;" name = "desc">
+                                            </div>
+
+                                            <div class= "pc" style="position: relative ;top: -10px;left:30px;line-height: 30px;border-radius: 5px;padding:10px 20PX ;color: white;">
+                                            Category: <select name="category" style ="color:black;">
+                                                <option value="clothing" style ="color:black;">Clothing</option>
+                                                <option value="electronics" style ="color:black;">Electronics</option>
                                             </select>
-
                                             </div>
                                             <button class = "btn btn-success">Add Product</button>
                                             </div>    
@@ -210,6 +133,7 @@
                     include_once('ProductOperation.php');
                     $operation = new ProductOperation($_POST['name'], $dst_db, $_POST['price'], $_POST['desc'], $_POST['category']);
                     $operation->insertProduct($con);
+                    header("Location:SelfProduct.php");
                 }
                 catch(Exception $e){
                     echo "<script>alert($e);</script>";
@@ -217,12 +141,8 @@
                
                 
             }
-        }
-        else{
-            echo "login first" ;
-            // header('Location: ../Login/Login.Php');
-            
-        }
+        
+        
       
     ?>
 
