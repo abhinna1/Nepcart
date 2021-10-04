@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<?php
-    class LoggedNavbar{
+    <?php
+    class LoggedNavbar
+    {
         private $logout;
-        public function displayNavBar(){
+        public function displayNavBar()
+        {
             include_once 'Login/LoginPhp.php';
             $loginPhp = new LoginPhp;
-            
+
             // session_start();
             $name = $_SESSION['fname'];
             return <<<HTML
@@ -31,8 +35,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">
-                            <span class="glyphicon glyphicon-th-list" style='padding-right:5px;'></span>Categories
+                            
+                            <li class="nav-item dropdown">
+                            <a class="glyphicon glyphicon-th-list" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Fashion</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Electronics</a></li>
+                            
+                            </ul>
                             
                             </a>
                         </li>
@@ -58,7 +73,8 @@
         }
     }
 
-?>
-  
-    </body>
+    ?>
+
+</body>
+
 </html>

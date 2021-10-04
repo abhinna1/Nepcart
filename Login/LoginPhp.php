@@ -11,7 +11,7 @@ class LoginPhp{
         include_once('../config/Config.php');
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $config = new Config("localhost", "Abhinna", '$abhi123', 'nepcart_db');
+        $config = new Config("localhost", "root", 'Samyam2896', 'nepcart_db');
         $conn = $config->connectDb();
         $stmt = "SELECT * FROM tbl_user where email='$email' and pasword = '$password'";
         $user = $conn->query($stmt);

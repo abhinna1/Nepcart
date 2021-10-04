@@ -59,11 +59,11 @@
   <style>
     .carousel-item {
       height: 64rem;
-      /* width:72rem; */
-      position: relative;
+      
+      position: center;
     }
     .container {
-      position: relative;
+      position: center;
       bottom: 0;
       left: 0;
       right: 0;

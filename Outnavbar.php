@@ -17,11 +17,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">
-                            <span class="glyphicon glyphicon-th-list" style='padding-right:5px;'></span>Categories
                             
+                            <li class="nav-item dropdown">
+                            <a class="glyphicon glyphicon-th-list" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
                             </a>
-                        </li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Fashion</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Electronics</a></li>
+                            
+                            </ul>
+                            </ul>
+                            </a>
                         <li style="height: 10%; width: 500px; margin-left:3rem; margin-top:auto; margin-bottom:auto;">
                             <input type="search" class="form-control glyphicon glyphicon-search" placeholder="&#xe003" style="outline:none;"/>
                         </li>
