@@ -1,0 +1,6 @@
+.carousel slide carousel-fade{margin:center; padding: 0;box-sizing:border-box ;
+    font-family: 'Josefin Sans', sans-serif;}
+    #carouselExampleFade active{
+        width: 720px;
+        height: 1080px;
+    }
