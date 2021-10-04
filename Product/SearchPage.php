@@ -30,9 +30,8 @@
             $name = $row['product_name'];
             $id = $row['product_id'];
             $_GET['id'] = $row["product_id"];
-            
             echo <<<HTML
-            <form method="POST">
+            <form method="GET">
                 <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative; width: 20%; display: inline-block;">
                     <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
                         <div class="col">

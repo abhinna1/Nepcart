@@ -75,7 +75,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="">My Cart</a></li>
+                                <li><a class="dropdown-item" href="../Cart/ViewCart.php">My Cart</a></li>
                                 </ul>
                                 </a>
                         </li>

@@ -10,8 +10,9 @@
 
 <?php
     
-
+    
     if(isset($_GET['id'])){
+        $_GET['PID'] = $_GET['id'];
         try{
             include_once('../config/Config.php');
             $config = Config::getObject();

@@ -34,7 +34,7 @@
             return $this->conn;
         }
         public static function getObject(){
-            $object = new Config("localhost", "root", 'xjq18khaha', "nepcart_db");
+            $object = new Config("localhost", "Abhinna", '$abhi123', "nepcart_db");
             return $object;
         }
     }

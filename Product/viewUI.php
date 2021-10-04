@@ -1,6 +1,8 @@
 <?php 
 class viewUI{
     public function getUI($row){
+        $pid = $_GET['id'];
+        $_GET['PID'] = $_GET['id'];
         return <<<HTML
             <div class="container mt-5 mb-5">
                     <link rel="stylesheet" href="product.css">
@@ -28,8 +30,14 @@ class viewUI{
                                     <h3>Rs.$row[3]</h3>
                                    
                                     
-                                    <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Buy Now</button> <button class="btn btn-dark">Add to Cart</button> </div>
-                                    
+                                    <div class="buttons d-flex flex-row mt-5 gap-3">
+                                    <form method="GET">
+                                        
+                                        <button class="btn btn-outline-dark">Buy Now</button>
+                                    </form>
+                                    <form action="../Cart/CartOperation.php?pid=$pid" method="POST">
+                                        <button class="btn btn-dark">Add to Cart</button> </div>
+                                    </form>
                             </div>
                         </div>
                     </div>
