@@ -12,14 +12,19 @@
 </head>
 <body>
         <?php
-        session_start();
         include_once('EditUI.php');
         
         
         $edit = new EditUI();
 
         if($_SERVER['REQUEST_METHOD']!="POST"){
+            include_once ('../navbar.php');
+            $navbar = new Navbar;
+
         ?>
+            <div class="container" style="background-color:transparent;">
+            <?php echo $navbar->displayNavbar(); ?>
+            </div>
             <div class="card" style="width:40%; margin-right:50%; margin-top:5%; margin-bottom:50%; background-color:#ecd9a7; margin-left:30%">
                 <div class="card-header">
                     <?php

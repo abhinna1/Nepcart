@@ -32,7 +32,7 @@ class submit extends LoginPhp{
     public function validation(){
         $this->getData();
         include_once('../config/Config.php');
-        $config = new Config("localhost", "Abhinna", '$abhi123', 'nepcart_db');
+        $config = Config::getObject();
         $this->conn = $config->connectDb();
         $adminname = $this->test_input($_POST["email"]);
         $stmt = "SELECT * FROM tbl_user where email='$this->email'";

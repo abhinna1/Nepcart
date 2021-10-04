@@ -14,41 +14,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-  <!-- navigation bar !-->
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" style="height:40px; top:50%; bottom:50%; margin-right:20px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Homepage.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cart</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Shop
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Items</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="../signup page/registration.php">Sign Up</a></li>
-              <li><a class="dropdown-item" href="../Login/login.php">Sign In</a></li>
-            </ul>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav> -->
   <div class="container" style="background-color:transparent;">
         <?php include_once ('../navbar.php');
         $navbar = new Navbar;
@@ -59,11 +24,11 @@
   <style>
     .carousel-item {
       height: 64rem;
-      
-      position: center;
+      /* width:72rem; */
+      position: relative;
     }
     .container {
-      position: center;
+      position: relative;
       bottom: 0;
       left: 0;
       right: 0;
@@ -98,43 +63,51 @@
     <div class="py-5">
       <h2 class="text-center">Buy products here</h2>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col md-3 cp;-12">
-          <div class="card" style="width:300px">
-            <img src="images/shoes_1.jpg" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text">Stylish and affordable shoes</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col md-3 cp;-12">
-          <div class="card" style="width:300px">
-            <img src="images/shoes_1.jpg" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text">Cute and trendy bags</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col md-3 cp;-12">
-          <div class="card" style="width:300px">
-            <img src="images/shoes_1.jpg" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text">Budget Laptops</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col md-3 cp;-12">
-          <div class="card" style="width:300px">
-            <img src="images/shoes_1.jpg" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text">Stylish and comfortable T-shirts</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php
+        include_once('../Product/ProductSearch.php');
+        include_once('../config/Config.php');
+        $config = Config::getObject();
+        $pSearch = new ProductSearch();
+        $con = $config->connectDb();
+        $query = "select * from tbl_product;";
+        $res = mysqli_query($con, $query);
+        
+        while($row=mysqli_fetch_array($res)){
+            if($_SERVER['REQUEST_METHOD']!="POST"){
+                $name = $row['product_name'];
+                echo <<<HTML
+                    <form method="POST">
+                    <main>
+                    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative; width: 20%; display: inline-block;">
+                        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" style ="display: inline-block;">
+                            <div class="col" style="display: inline-block;">
+                                <div class="card h-100 shadow-sm"> <img src= ../Product/$row[2] class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">$row[1]</span> <span class="float-end price-hp">Rs. $row[3]</span> </div>
+                                        
+                                        <div class="text-center my-4">
+                                        <a href="../Product/OpenProduct.php?id=$row[0]" class="btn btn-warning">Check offer</a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    </main>
+                    </form>
+                
+                        </div>
+                HTML;
+            }
+            else{
+                echo $row['product_name'];
+                break;
+            }
+        }
+    ?>
+
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>

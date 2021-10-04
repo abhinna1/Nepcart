@@ -17,7 +17,9 @@
         }
 
         public function getForm(){
+            
             return <<<HTML
+                
                     <form action="POST">
                         <h2 style="margin-bottom: 20px; ">User Info</h2>
                         <h5 style="display:inline-block;">First Name:</h5>
