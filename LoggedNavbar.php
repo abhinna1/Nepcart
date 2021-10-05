@@ -47,7 +47,7 @@
                             <span class="glyphicon glyphicon-th-list"></span> Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../Product/FashionPage.php">Fashion</a></li>
+                            <li><a class="dropdown-item" href="../Product/FashionPage.php?category=fashion">Fashion</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

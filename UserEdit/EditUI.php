@@ -8,6 +8,11 @@
         private $phone;
         private $address;
 
+        private $config;
+        private $con;
+
+        
+
         public function getData(){
             $this->fname = $_SESSION['fname'];
             $this->lname = $_SESSION['lname'];
@@ -44,8 +49,24 @@
         }
         
         public function submit(){
+            session_start();
+            include_once('../Config/Config.php');
+            $this->fname = $_POST['fName'];
+            $this->lname = $_POST['lName'];
+            $this->email = $_POST['email'];
+            $this->address = $_POST['address'];
+            $this->phone = $_POST['phone'];
+            $this->config = Config::getObject();
+            $this->con = $this->config->connectDb();
+            $uid = $_SESSION['id'];
+
+            $query = "update tbl_user set fName = '$this->fname', lName = '$this->lname', email = '$this->email', address='$this->address', phone='$this->phone' where uID=$uid";
+            $stmt = $this->con -> prepare($query);
+            $stmt->execute();
+            $_SESSION['fname']=$this->fname;
+            header("Location:../homepage/home.php");
             return <<<HTML
-                <h3>YESSS</h3>
+                
             HTML;
         }
     }

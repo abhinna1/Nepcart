@@ -71,23 +71,22 @@
         $con = $config->connectDb();
         $query = "select * from tbl_product;";
         $res = mysqli_query($con, $query);
-        
-        while($row=mysqli_fetch_array($res)){
+          while($row=mysqli_fetch_array($res)){
             if($_SERVER['REQUEST_METHOD']!="POST"){
                 $name = $row['product_name'];
                 echo <<<HTML
                     <form method="POST">
                     <main>
-                    <div class="col-sm-4" style="position: relative; width: 20%; display: inline-block;">
+                    <div class="col-sm-4" style="position: relative; width:50%; height:300px; overflow:auto; display: inline-block;">
                         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" style ="display: inline-block;">
                             <div class="col" style="display: inline-block;">
-                                <div class="card h-100 shadow-sm"> <img src= ../Product/$row[2] class="card-img-top" alt="...">
+                                <div class="card h-100 shadow-sm"> <img src= ../Product/$row[2] style="width:50%; height:10%; overflow:hidden;" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">$row[1]</span> <span class="float-end price-hp">Rs. $row[3]</span> </div>
-                                        
                                         <div class="text-center my-4">
                                         <a href="../Product/OpenProduct.php?id=$row[0]" class="btn btn-warning">Check offer</a>
-                                    </div>
+                                        
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,12 +99,16 @@
                 
                         </div>
                 HTML;
+
+                
             }
+            
             else{
                 echo $row['product_name'];
                 break;
             }
-        }
+          }
+        
     ?>
 
   </section>

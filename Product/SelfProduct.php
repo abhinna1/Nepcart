@@ -50,10 +50,9 @@ class ViewCart{
                             <thead>
                                 <tr>
                                     <th scope="col"> </th>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Available</th>
-                                    <th scope="col" class="text-center">Quantity</th>
-                                    <th scope="col" class="text-right">Price</th>
+                                    <th scope="col" class="text-center">Product</th>
+                                    <th scope="col" class="text-center">Available</th>
+                                    <th scope="col" class="text-center">Price</th>
                                     <th> </th>
                                 </tr>
                             </thead>
@@ -62,13 +61,17 @@ class ViewCart{
 
                         while($row=mysqli_fetch_array($res)){
                                 $pid=$row[3];
+                                $name = $row[0];
                                 echo <<<HTML
                                 <tr>
+                                <form action='ProductUpdate.php?pid=$pid' method="POST">
                                     <td><img src="../Product/$row[2]" style="width:30%;"> </td>
-                                    <td>$row[0]</td>
+                                    <td> <input type="text" name="product_name"value=$name></td>
+                                    
                                     <td>In stock</td>
-                                    <td><input class="form-control" type="text" value="1" /></td>
-                                    <td class="text-right">$row[1]</td>
+                                    <td> <input type="text"  name="product_price" value=$row[1]></td>
+                                        <td class="text-right"><button class="btn btn-sm btn-success"><i class="fa fa-trash"></i>Update</button> </td>
+                                    </form>
                                     <form action='ProductDelete.php?pid=$pid' method="POST">
                                         <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Delete</button> </td>
                                     </form>
