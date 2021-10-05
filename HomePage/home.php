@@ -1,6 +1,17 @@
+
+<!-- 
+  Group Members:
+  Abhinna Manandhar
+  Samyam Katwal
+  Ayusha Shrestha
+  Surya Kumar Mahato
+  Jasmine Osti
+ -->
+
+
 <!doctype html>
 <html lang="en">
-<!-- homepage design -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +46,6 @@
       padding-bottom: 0px;
     }
   </style>
-  <!-- caurosel -->
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -64,7 +74,6 @@
     <div class="py-5">
       <h2 class="text-center">Buy products here</h2>
     </div>
-    <!-- navbar -->
     <?php
         include_once('../Product/ProductSearch.php');
         include_once('../config/Config.php');
