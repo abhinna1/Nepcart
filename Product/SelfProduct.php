@@ -32,7 +32,7 @@ class ViewCart{
         $config = Config::getObject();
         $this->con=$config->connectDb();
         $uid = $_SESSION['id'];
-        $query = "SELECT p.product_name, p.product_price,p.product_image, p.product_id FROM tbl_product as p where p.uID=1;";
+        $query = "SELECT p.product_name, p.product_price,p.product_image, p.product_id FROM tbl_product as p where p.uID=$uid;";
         $res = mysqli_query($this->con, $query);
         
         echo <<<HTML

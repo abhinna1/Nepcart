@@ -40,11 +40,6 @@ class submit extends LoginPhp{
 
         require_once('FormInput.php');
         $form = new Input();
-        // foreach($users as $user) {
-        //     if($user['email'] == $adminname){
-        //             echo("email already exists <br> <a href='registration.php'>Signup Again</a>");
-        //             die;
-        //     }
         if(mysqli_num_rows($user)>0){
             return "email already exists <br> <a href='registration.php'>Signup Again</a>";
         }

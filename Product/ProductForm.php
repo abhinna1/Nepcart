@@ -133,7 +133,8 @@
                     include_once('ProductOperation.php');
                     $operation = new ProductOperation($_POST['name'], $dst_db, $_POST['price'], $_POST['desc'], $_POST['category']);
                     $operation->insertProduct($con);
-                    header("Location:SelfProduct.php");
+                    // header("Location:SelfProduct.php");
+                    echo '<script>location.replace("http://localhost/nepcart/Product/SelfProduct.php");</script>';
                 }
                 catch(Exception $e){
                     echo "<script>alert($e);</script>";

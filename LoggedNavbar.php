@@ -47,11 +47,11 @@
                             <span class="glyphicon glyphicon-th-list"></span> Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../Product/FashionPage.php?category=fashion">Fashion</a></li>
+                            <li><a class="dropdown-item" href="../Product/FashionPage.php?category=clothing">Fashion</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="">Electronics</a></li>
+                            <li><a class="dropdown-item" href="../Product/FashionPage.php?category=electronics">Electronics</a></li>
                             </ul>
                             </a>
                         </li>

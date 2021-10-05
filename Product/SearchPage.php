@@ -35,7 +35,7 @@
             <div class="col-sm-4" style="position: relative; width:3;kiuytt0%; height:300px; overflow:auto; display: inline-block;">
                     <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
                         <div class="col">
-                            <div class="card h-100 shadow-sm"> <img src= $row[2] class="card-img-top" alt="..."style="style="width:50%; height:10%; overflow:hidden;"">
+                            <div class="card h-100 shadow-sm"> <img src= $row[2] class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">$name</span> <span class="float-end price-hp">Rs. $row[3]</span> </div>
                                     
