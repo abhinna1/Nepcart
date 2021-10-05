@@ -12,13 +12,10 @@ class CartOperation{
         $uid = $_SESSION['id'];
         $stmt = $this->con -> prepare($query);
         $stmt->execute();
-
-
-        
     }
     
 }
-// echo $_GET['pid'];
+
 try{
     session_start();
     $cart = new CartOperation();

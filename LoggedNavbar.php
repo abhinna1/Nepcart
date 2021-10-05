@@ -26,7 +26,6 @@
                 <!-- Navigation Bar -->
                 <nav class="navbar navbar-expand-sm bg-light" style="margin-top:10px;">
                 <form method="POST" action="../Product/ProductForm.php"></form>
-
                     <a href="../HomePage/home.php">
                         <img src="../images/Logo.png" alt="" style="height:40px; top:50%; bottom:50%; margin-right:20px;">
                     </a>
@@ -40,7 +39,6 @@
                         </li>
                       
                         <li class="nav-item">
-
                             <li class="nav-item dropdown">
                             
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,7 +85,6 @@
                     </ul>
                     </form>
                 </nav>
-
                 
                 HTML;
         }

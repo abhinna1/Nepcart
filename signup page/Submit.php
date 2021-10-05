@@ -61,7 +61,6 @@ class submit extends LoginPhp{
                 $db = new Config('localhost','Abhinna', '$abhi123', 'nepcart_db');
                 $operation = new Operation($this->fName, $this->lName, $this->email, $this->password, $this->phone_code, $this->phone, $this->address, $this->gender);
                 $operation -> insertDb($this->conn);
-                echo $this->password;
                 return '<h2>Form Successfully Submited</h2>';
                 
                 $db -> close();

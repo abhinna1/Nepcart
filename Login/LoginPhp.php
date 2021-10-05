@@ -27,7 +27,8 @@ class LoginPhp{
 
 
                 }
-                header('Location: ../HomePage/home.php');
+                // header('Location: ../HomePage/home.php');
+                echo '<script>location.replace("http://localhost/nepcart/homepage/home.php");</script>';
 
             }
             else{
