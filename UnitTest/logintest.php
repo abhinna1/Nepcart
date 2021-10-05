@@ -23,7 +23,7 @@ final class logintest extends TestCase
     
 
     public function testLogin(){
-        $this->login("manandharabhinna@gmail.com", "123");
+        $this->login("manandharabhinna@gmail.com", "123567");
         $this->assertEquals(true, $this->logged);
     }
 }
